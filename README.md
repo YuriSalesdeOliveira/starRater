@@ -1,0 +1,2 @@
+# starRater
+Estrelas para avaliação
