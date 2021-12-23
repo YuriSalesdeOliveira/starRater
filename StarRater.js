@@ -13,9 +13,9 @@ class StarRater extends HTMLElement
 
         const style = this.style()
         const rater = this.createRater()
-        const stars = this.createStars()
+        this.stars = this.createStars()
 
-        stars.forEach(star => rater.appendChild(star))
+        this.stars.forEach(star => rater.appendChild(star))
 
         shadow.appendChild(rater)
         shadow.appendChild(style)
@@ -26,7 +26,15 @@ class StarRater extends HTMLElement
         const rater = document.createElement('div')
         rater.classList.add('star-rater')
 
+        rater.addEventListener('mouseout', this.resetRating.bind(this))
+
         return rater
+    }
+
+    resetRating()
+    {
+        this.currentRating = this.getAttribute('data-rating') ?? 0
+        this.highlightStar()
     }
 
     createStars()
@@ -38,18 +46,45 @@ class StarRater extends HTMLElement
             star.setAttribute('data-value', ++key)
             star.innerHTML = '&#9733;'
 
+            star.addEventListener('click', this.setRating.bind(this))
+            star.addEventListener('mousemove', this.ratingHover.bind(this))
+
             return star
         }
 
         return Array.from({ length: 5 }, createStar)
     }
 
+    ratingHover(event)
+    {
+        this.currentRating = event.currentTarget.getAttribute('data-value')
+        this.highlightStar()
+    }
+
+    highlightStar()
+    {
+        this.stars.forEach(star => {
+            
+            star.style.color = star.getAttribute('data-value') <= this.currentRating ?
+            '#d4ab00' :
+            'gray'
+
+        })
+    }
+
+    setRating(event)
+    {
+        this.setAttribute('data-rating', event.currentTarget.getAttribute('data-value'))
+    }
+
     style()
     {
         const style = document.createElement('style')
         style.innerText = `
-            .star-rater {
-                color: red;
+            .star {
+                cursor: pointer;
+                font-size: 5rem;
+                color: gray;
             }
         `
 
