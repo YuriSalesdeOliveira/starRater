@@ -1,7 +1,11 @@
 # starRater
 
-![empty-stars](https://user-images.githubusercontent.com/54549125/150289447-80e5ac85-96cb-4c3c-95bc-bff73b5c5c82.png)
-![filled-stars](https://user-images.githubusercontent.com/54549125/150289458-c4417211-a689-4519-82cf-62c5cc7b9ccc.png)
+<div>
+
+  <img src="https://user-images.githubusercontent.com/54549125/150289447-80e5ac85-96cb-4c3c-95bc-bff73b5c5c82.png" height="100"/>
+  <img src="https://user-images.githubusercontent.com/54549125/150289458-c4417211-a689-4519-82cf-62c5cc7b9ccc.png" height="100"/>
+  
+</div>
 
 - Onde posso ver sua demonstração? [Click aqui](https://yurisalesdeoliveira.github.io/starRater/)
 - Qual foi sua experiência? Consegui praticar alguns conceitos de CSS e JS
