@@ -8,7 +8,7 @@
 </div>
 
 - Onde posso ver sua demonstração? [Click aqui](https://yurisalesdeoliveira.github.io/starRater/)
-- Qual foi sua experiência? Consegui praticar alguns conceitos de CSS e JS
+- Qual foi sua experiência? Consegui praticar componentização com javascript puro
 
 ### Tecnologias
 
